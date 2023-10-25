@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PatientsTableSeeder extends Seeder
 {
@@ -13,12 +14,8 @@ class PatientsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        $data = [
-            ['name' => 'Rafif'],
-            ['name' => 'Rafif Ahmad'],
-        ];
-
-        DB::table('patients')->insert($data);
+        DB::table('users')->insert([
+            'name' => Str::random(10),
+        ]);
     }
 }
